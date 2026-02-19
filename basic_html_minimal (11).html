@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+
+<!--Same head to be used minus CSS + Relevant Title--->  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SPRY TMS - rTMS Therapy System</title>
+
+<!---Begin to-be-separate .css for use with every page--->
+<style>
+      /* Layout */
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+    
+* {
+  box-sizing: content-box;
+}
+
+/* Reusable Containers */
+.section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+      
+.basic-section {
+  width: 1440px;
+  padding: 60px 55px 40px 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-header-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
+.module {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background: rgba(255, 255, 255, 0.60);
+  padding: 60px 40px 30px 40px;
+  gap: 50px;
+
+  /* Shadow */
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.55);
+
+  /* Keep fill from bleeding into the stroke area */
+  background-clip: padding-box;
+
+  /* Needed for outside stroke pseudo-element */
+  position: relative;
+}
+
+/* Outside stroke (5px) with very high transparency (5%) */
+.module::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  padding: 5px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, rgba(90,90,90,0.05), rgba(180,180,180,0.05));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+
+.dynamic-spacer {
+  height: 50vh;
+  max-height: 300px;
+}
+
+/* Reusable Text Classes */
+
+.menu-text {
+  text-align: left;
+  color: #000000;
+  text-transform: uppercase;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.menu-text-secondary {
+  text-align: left;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.hero-header {
+  text-align: left;
+  color: #484848;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.hero-subtext {
+  text-align: left;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.button-text-large {
+  text-align: left;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-weight: 650;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.button-text-small {
+  text-align: left;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 28px;
+}
+
+.input-label {
+  text-align: left;
+  color: #000000;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.module-header {
+  text-align: left;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 28px;
+}
+
+.module-text-primary {
+  text-align: left;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.module-text-secondary {
+  text-align: left;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.section-header {
+  text-align: left;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.section-text-primary {
+  text-align: left;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 54px;
+}
+
+.section-text-secondary {
+  text-align: left;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 54px;
+}
+    </style>
+  </head>
+
+<!---End to-be-separate .css for use with every page--->
+
+
+  
+  <body>
+    
+<!--- 'Header' --->
+ <div class="section" style="background: #064A87;">
+      <div class="basic-section" style="flex-direction: row; justify-content: space-between; padding: 20px 20px;">
+        <div style="width: 268px; height: 75px; background-image: url('https://github.com/yushi-io/SPRYTMSTemp/blob/main/SPRYTMStext.png?raw=true'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+        <p class="menu-text-secondary">For Researchers | Other Neuromodulation Technologies</p>
+        <div style="width: 160px; height: 60px; background-image: url('https://github.com/yushi-io/SPRYTMSTemp/blob/main/SoterixLogo.png?raw=true'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+        </div>
+      </div>
+ </div>
+
+<!--- Menu --->
+ <div class="section" style="background: white;">
+      <div class="basic-section" style="flex-direction: row; justify-content: flex-start; gap: 40px; padding: 10px 20px;">
+        <p class="menu-text">home</p>
+        <p class="menu-text">Neuronavigation</p>
+        <p class="menu-text">find a provider</p>
+        <p class="menu-text">contact us</p>
+      </div>
+ </div>
+
+
+<!--- Hero --->
+    <div class="section" style="background: linear-gradient(164deg, #48BFFF 9.51%, #D8E6DB 73.64%);">
+      <div class="basic-section" style="display: flex; justify-content: left;" style="background-image: url('https://github.com/yushi-io/SPRYTMSTemp/blob/main/SPRYTMShero.png?raw=true'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div style="width: 604px; display: flex; flex-direction: column; gap: 360px;">
+
+          <!-- Image + header group -->
+          <div style="display: flex; flex-direction: column; gap: 40px;"">
+            <div style="width: 603px; height: 120px; background-image: url('https://github.com/yushi-io/SPRYTMSTemp/blob/main/SPRYTMShero.png?raw=true'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+
+            <div style="padding-left: 20px;">
+              <p class="hero-header">A comprehensive repetitive Transcranial Magnetic Stimulation (rTMS) solution with unmatched accessibility</p>
+            </div>
+          </div>
+
+          <!-- Blue box group -->
+          <div style="display: flex; width: 592px; padding: 15px 25px; gap: 15px; border-radius: 8px; background: linear-gradient(90deg, #064A87 84.02%, rgba(153, 153, 153, 0.00) 98.22%);">
+            <div style="width: 500px;">
+              <p class="hero-subtext">Proudly designed and supported by the team at <span style="font-weight: 600;">Soterix Medical</span>, an American company relied on clinicians and researchers for proving cutting edge neuromodulation technologies for over 15 years</p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+        </div>
+      
+
+      </div>
+    </div>
+<!--- End Hero--->
+    
+    
+<!--- Basic Module Right Bias ---> 
+    <div class="section" style="background: #E2E2E2;">
+      <div class="basic-section" style="background-image: url('https://github.com/yushi-io/SPRYTMSTemp/blob/main/modulebg1.png?raw=true'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+     
+          <!--- Creating "Module" via reusable css class-->
+          <div class="module">
+          <p class="module-header">User Focused Design</p>
+          <p class="module-text-primary">Intuitive interface with easy to understand controls. Preprogrammed protocols from traditional to the cutting edge of investigational medicine. Entirely free to use and customize.</p>
+          </div>
+          <div class="dynamic-spacer">
+          </div>
+
+
+      </div>
+    </div>
+
+<!--- Basic Section ---> 
+    <div class="section" style="background: #DCF3FF;">
+      <div class="basic-section">
+        <div class="section-header-wrapper">
+
+          <p class="section-header">Section Header</p>
+        </div>
+
+        <p class="section-text-primary">Section Text 1 - Lorem neuromodulatio processus exhibet variabilem responsionem sub stimulatione moderata, ubi excitabilitas corticalis et cohaerentia retis ad influxus electricos vel magneticos externos adaptantur. Effectus modulationis saepe apparent ut mutationes transientes in oscillationibus neuralibus, cum mechanisticis plasticitatis synapticae coniunctae.</p>
+      </div>
+    </div>
+
+  
+  
+  </body>
+</html>
